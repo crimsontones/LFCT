@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blank Page</title>
+<script type="text/javascript">
+var clevertap = {event:[], profile:[], account:[], onUserLogin:[], notifications:[], privacy:[]};
+clevertap.account.push({"id": "696-K96-ZW7Z"});
+clevertap.privacy.push({optOut: false}); // set the flag to true, if the user of the device opts out of sharing their data
+clevertap.privacy.push({useIP: false}); // set the flag to true, if the user agrees to share their IP data
+(function () {
+var wzrk = document.createElement('script');
+wzrk.type = 'text/javascript';
+wzrk.async = true;
+wzrk.src = ('https:' == document.location.protocol ? 'https://d2r1yp2w7bby2u.cloudfront.net' : 'http://static.clevertap.com') + '/js/clevertap.min.js';
+var s = document.getElementsByTagName('script')[0];
+s.parentNode.insertBefore(wzrk, s);
+})();
+</script>
+
+</head>
+<body>
+<button id="sendWebpopupButton1">Trigger Web Pop-up 1</button>
+<button id="sendWebpopupButton2">Trigger Web Pop-up 2</button>
+
+
+<script>
+function sendWebpopupMessage1() {
+    // Add your logic here
+    clevertap.event.push("Button Clicked", {
+        "Type": "NCB Steps Complete"
+    });
+    console.log("Web Pop-up triggered!");
+    // Example: Integrate with your WebSDK
+    // CleverTap.sendWebpopupMessage({ /* your parameters here */ });
+}
+</script>
+
+<script>
+function sendWebpopupMessage2() {
+    // Add your logic here
+    clevertap.event.push("Button Clicked", {
+        "Type": "Frequency Test"
+    });
+    console.log("Frequency Test triggered!");
+    // Example: Integrate with your WebSDK
+    // CleverTap.sendWebpopupMessage({ /* your parameters here */ });
+}
+</script>
+
+<script>document.getElementById("sendWebpopupButton1").addEventListener("click", sendWebpopupMessage1);</script>
+<script>document.getElementById("sendWebpopupButton2").addEventListener("click", sendWebpopupMessage2);</script>
+
+</body>
+</html>
