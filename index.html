@@ -23,6 +23,7 @@ s.parentNode.insertBefore(wzrk, s);
 <body>
 <button id="sendWebpopupButton1">Trigger Web Pop-up 1</button>
 <button id="sendWebpopupButton2">Trigger Web Pop-up 2</button>
+<button id="sendWebpopupButton2">Trigger Web Pop-up 3</button>
 
 
 <script>
@@ -49,8 +50,21 @@ function sendWebpopupMessage2() {
 }
 </script>
 
+<script>
+function sendWebpopupMessage3() {
+    // Add your logic here
+    clevertap.event.push("Button Clicked", {
+        "Type": "Frequency Test"
+    });
+    console.log("Frequency Test triggered!");
+    // Example: Integrate with your WebSDK
+    // CleverTap.sendWebpopupMessage({ /* your parameters here */ });
+}
+</script>
+
 <script>document.getElementById("sendWebpopupButton1").addEventListener("click", sendWebpopupMessage1);</script>
 <script>document.getElementById("sendWebpopupButton2").addEventListener("click", sendWebpopupMessage2);</script>
+<script>document.getElementById("sendWebpopupButton2").addEventListener("click", sendWebpopupMessage3);</script>
 
 </body>
 </html>
